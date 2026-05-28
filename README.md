@@ -1,2 +1,1 @@
-# my_paper_markdown
-毕业论文相关内容
+git add . & git commit -m "update" & git push origin main
