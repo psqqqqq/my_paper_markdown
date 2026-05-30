@@ -20,5 +20,36 @@ Metastasis : 癌细胞转移，医学专业词汇，指恶性肿瘤细胞从原�
 Relapse : 疾病复发，临床医学上的负面终点事件，指病情在好转一段时间后重新恶化。
 Faithfully : 忠实地，指生成模型在合成数据时能够完美保留原始数据的统计结构与内在相关性。
 To the best of our knowledge : 据我们所知，高水平学术论文中用于陈述研究独特创新性时的经典防御性免责句式。
-
+orthonormal：正交
+scalar：标量
+ fivefold cross-validation:五倍交叉验证
+hallucination：幻觉
+Emerging Manufacturing：新兴制造业
+in light of：鉴于
+plethora：过多
+nuanced：微妙的
+endogeneity：内生性
+Stated Goal：固定目标
+Conditionality：n.制约性；受限制性
+linguistic_pattern：语言模式
+gendered wording：性别化措辞
+wording：措辞，用词
+masculine_coded / feminine_coded 语言风格偏向某种性别刻板印象
+典型词：aggressive
+dominant
+competitive
+driven
+strong leader论文发现：这种词汇会降低女性投递意愿。
+feminine-coded（女性编码语言）：
+supportive
+understanding
+nurturing
+collaborative
+warm
+generic:adj.一般的，通用的；（货物，尤指药品）没有牌子的，无商标的；属的，类的；（生）属的，类的
+信号的类型：
+lexical：具体词汇
+semantic:语义表达
+requirement：招聘条件
+censor:删失
 
