@@ -73,14 +73,14 @@ $$
 * `origin`：GitHub 云端仓库的默认代号（指代你在网页上的那个网址）。
 * `main`：你的主分支名称（GitHub 默认的主线叫 `main` 或 `master`）。
 
-### 3. 命令历史是针对每一个文件夹都有一个吗？
+# 命令历史是针对每一个文件夹都有一个吗？
 
 **不是，它是针对你当前打开的“终端黑窗口”的。**
 
 * **终端的历史记录** ：你在 CMD 或 Git Bash 里按“方向键上键（↑）”，调出的是 **你这台电脑最近输入过的命令历史** ，它不管你当前在哪个文件夹。你在 `D:\LLM` 输入过这句话，去到 `C:\` 按上键一样能调出来。
 * **Git 的历史记录（Commit 历史）** ：这才是针对文件夹（仓库）的。当你进去 `my_paper_markdown` 执行 `git log` 时，看到的是这篇论文的修改历史；如果你进到另一个写代码的文件夹，看到的就是代码的历史。两者互不干扰。
 
-### 可以指定只更新某一个文件吗？
+# 可以指定只更新某一个文件吗？
 
 **当然可以！这也是 Git 的强大之处。**
 
@@ -118,11 +118,29 @@ git push origin main
 
 # 不同的终端，Git 语法不会变
 
+# **Git 不是专门为 GitHub 设计的** ，反而是  **GitHub 基于 Git 做出来的代码托管平台** 。
+
+所以其实git可以remote add其他网站的内容如gitee
+
+甚至Git 本身可以完全脱离 GitHub 使用。比如你电脑上一个文件夹：
+
+```
+git init
+git add .
+git commit -m "update"
+```
+
+即使你永远不上传到 GitHub，Git 也能在本地记录版本、回退历史、比较修改。
+
+GitHub 只是提供了一个远程服务器，让你可以：把本地 Git 仓库上传备份、多人协作、网页查看代码、提交 issue、做 pull request、管理项目
+
 # 可以在不同节点的版本之间反复横跳
 
 # Git 的灵魂设计原则之一是：**“极度尊重用户的控制权，绝不替用户做不可逆的决定。”**
 
 所以分支虽然合并之后一定有记录，但是这整条线还是有意义的，不会设计成合并后把分支删除
+
+# 要用GH才能在终端上建仓库
 
 # 不同设备修改之前先pull
 
@@ -236,6 +254,44 @@ Date:   Thu May 28 10:37:51 2026 +0800
 再次回退到最新版本 在过去看完你想要的数据或旧文字后，你想让文件夹重新变回今天的最新状态，非常简单！因为你的**最新版本是有名字的**，它叫  **`main`** （主分支）。你不需要去记那一长串复杂的版本号，直接输入：
 
 git checkout main
+
+#### git init    &  git clone 仓库地址
+
+Git 会在里面生成一个隐藏文件夹：
+
+my_notes/
+├── .git/
+├── a.md
+├── b.md
+└── image.png
+
+这个 `.git` 文件夹就是 Git 的“管理中心”，里面记录版本历史、分支信息、提交记录等。
+
+从这一刻开始，`my_notes` 就变成了一个 Git 仓库。
+
+git init流程
+
+```
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/你的用户名/仓库名.git
+git push -u origin main
+```
+
+git clone是从本来就有的拉取下来，二者是反过来的
+
+#### git remote add origin https://github.com/你的GitHub用户名/你的仓库名.git
+
+这句话的意思是：**给本地仓库绑定一个 GitHub 远程仓库地址，并把这个远程地址起名叫 `origin`。**
+
+#### git push origin main
+
+这里的origin实际上是对应https://github.com/你的GitHub用户名/你的仓库名.git这个远程仓库的一个别名，因为git可以一次连接多个仓库，所以一般是用主要仓库，origin、我们在不同的文件夹所以可以用同一个通用的origin这个名字 main 是我们本地分支的名字也可以自定义
+
+也是就把我们的本地分支main对应的内容 用git push到origin别名对应的远程仓库
+
 
 # 不常用命令
 
