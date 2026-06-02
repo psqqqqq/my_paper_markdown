@@ -237,6 +237,26 @@ Date:   Thu May 28 10:37:51 2026 +0800
 
 git checkout main
 
+#### git checkout -- README.md
+
+第一步：撕掉本地草稿，让文件乖乖退回到本地的旧节点（节点 A），这是相对于本地的最新节点，但是全局的旧节点
+
+第二步：此时本地干净了，再从云端把全新的节点（节点 B）拉下来
+
+git pull origin main
+
+#### git push origin main
+
+推送
+
+#### git pull origin main
+
+拉取
+
+#### git stash
+
+暂存箱
+
 # 不常用命令
 
 #### git reflog
@@ -349,3 +369,23 @@ git branch -d test_model
 这时候在你的历史树状图上，你会清晰地看到：树干分叉出去一根树枝，最后这根树枝又 **弯回来合进了树干** 。
 
 所以，你说的“把树枝接到了树干上”不仅是一个比喻，它就是 Git 底层图形学（有向无环图 DAG）在现实世界里最完美的映射！
+
+# 遇到的状况
+
+## 没pull就修改了
+
+换设备时没拉取最新的版本就提前在旧版本修改了，这个时候再去pull发现如果pull相当于舍弃已经做得修改，git 会aborting中止这个行为
+
+叫你commit your changes or stash 存储 them before you merge   用git stash暂存再pull，拉取git pull origin main然后让git stash pop
+
+```
+<<<<<<< Updated upstream
+远程电脑修改的内容
+=======
+本地电脑刚才写的内容
+>>>>>>> Stashed changes
+```
+
+对比修改
+
+如果这些修改不重要，那就直接git check out先回退到云端之前的某个节点再pull

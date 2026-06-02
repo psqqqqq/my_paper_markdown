@@ -53,3 +53,37 @@ semantic:语义表达
 requirement：招聘条件
 censor:删失
 
+----survDiff-------------------------------                  |
+| ---------------------------------- | ----------- | --------------------------- |
+| survival analysis                  | 生存分析        | 研究某事件多久发生的方法                |
+| cornerstone                        | 基石，核心组成     | 强调生存分析在临床研究中的重要性            |
+| time-to-event outcomes             | 时间到事件结局     | 从起点到死亡、复发、转移等事件发生的时间        |
+| metastasis                         | 转移          | 肿瘤从原发部位扩散到其他部位              |
+| disease relapse                    | 疾病复发        | 疾病缓解后再次出现                   |
+| dropout                            | 退出研究        | 患者中途不再参与随访                  |
+| loss to follow-up                  | 失访          | 研究者无法继续获得患者后续信息             |
+| incomplete event information       | 不完整事件信息     | 不知道事件是否最终发生或何时发生            |
+| synthetic data generation          | 合成数据生成      | 用模型生成类似真实数据的新数据             |
+| faithfully reproduce               | 忠实再现        | 尽可能准确保留真实数据中的规律             |
+| event-time distribution            | 事件时间分布      | 事件发生时间在样本中的分布规律             |
+| censoring mechanism                | 删失机制        | 哪些样本被删失、何时删失、为何删失的规律        |
+| end-to-end                         | 端到端         | 从输入到输出整体训练，不拆成多个独立模型        |
+| diffusion model                    | 扩散模型        | 通过加噪和去噪过程生成数据的生成模型          |
+| tailored to                        | 专门适配于       | 针对某类任务或数据结构进行设计             |
+| data-generating mechanism          | 数据生成机制      | 真实数据背后变量之间的生成规律             |
+| jointly generating                 | 联合生成        | 同时生成多个相关变量，而不是分开生成          |
+| mixed-type covariates              | 混合类型协变量     | 同时包含连续变量和分类变量的患者特征          |
+| covariates                         | 协变量         | 年龄、性别、实验室指标、分期等解释变量         |
+| right-censoring                    | 右删失         | 只知道事件在某时间点之前未发生，但不知道之后情况    |
+| survival-tailored loss function    | 生存分析定制损失函数  | 专门考虑事件时间和删失结构的训练目标          | 
+| encodes                            | 编码，纳入       | 把某种结构或信息写入模型目标中             |
+| downstream survival tasks          | 下游生存任务      | 后续用合成数据训练 Cox、DeepHit 等生存模型 |
+| realistic event-time distributions | 真实可信的事件时间分布 | 生成数据中的事件时间应接近真实患者           |
+| preserves                          | 保留          | 不破坏真实数据中的关键机制               |
+| state-of-the-art                   | 当前先进水平      | 目前表现较强的已有方法                 |
+| generative baselines               | 生成模型基线      | 用来比较的已有生成模型                 |
+| distributional fidelity            | 分布保真度       | 合成数据分布与真实数据分布的接近程度          |
+| evaluation metrics                 | 评价指标        | 衡量模型表现的数值标准                 |
+| explicitly designed                | 明确设计用于      | 不是顺手套用，而是针对该任务专门设计          |
+
+
