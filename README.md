@@ -2,6 +2,8 @@
 
 git add . & git commit -m "update" & git push origin main
 
+&表示，不管前面的命令是否成功，后面的命令都会执行，而&&更好，表示前面的失败，后面的就停止
+
 # 日常流程建议
 
 所以，把你的日常动作固化成这套“三步闭环流”，你的 Git 这辈子都不会报错：
@@ -275,7 +277,7 @@ git init流程
 git init
 git add .
 git commit -m "first commit"
-git branch -M main
+git branch -M main #git branch -M main 只是为了处理这种情况：[master (root-commit) xxxxxxx] first如果你本地默认分支叫 master，但你想统一叫 main，才需要这一句
 git remote add origin https://github.com/你的用户名/仓库名.git
 git push -u origin main
 ```
@@ -291,7 +293,6 @@ git clone是从本来就有的拉取下来，二者是反过来的
 这里的origin实际上是对应https://github.com/你的GitHub用户名/你的仓库名.git这个远程仓库的一个别名，因为git可以一次连接多个仓库，所以一般是用主要仓库，origin、我们在不同的文件夹所以可以用同一个通用的origin这个名字 main 是我们本地分支的名字也可以自定义
 
 也是就把我们的本地分支main对应的内容 用git push到origin别名对应的远程仓库
-
 
 # 不常用命令
 
