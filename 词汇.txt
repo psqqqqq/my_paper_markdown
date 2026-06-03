@@ -52,6 +52,55 @@ lexical：具体词汇
 semantic:语义表达
 requirement：招聘条件
 censor:删失
+--- ----------------------------------------------------SFM-------------------------------------------------------------
+i.e.即，也就是
+Functional data — 功能型数据；函数型数据
+smooth random functions — 平滑随机函数
+continuous domain — 连续定义域；连续区间
+increasingly available — 越来越容易获得；越来越普遍存在
+biomedical research — 生物医学研究
+health informatics — 健康信息学
+epidemiology — 流行病学
+effective statistical analysis — 有效的统计分析
+hindered — 受到阻碍的；被限制的
+privacy constraints — 隐私限制
+sparse sampling — 稀疏采样
+irregular sampling — 不规则采样
+infinite-dimensionality — 无限维性
+non-Gaussian structures — 非高斯结构；非正态结构
+Smooth Flow Matching — 平滑流匹配
+tailored for — 专门适用于；为……定制
+generative modeling — 生成式建模
+exposing sensitive real data — 暴露敏感真实数据
+copula framework — Copula 框架；连接函数框架
+parsimonious — 简约的；参数节省的
+smooth flow — 平滑流
+Gaussianity — 高斯性；正态性
+low-rank assumptions — 低秩假设
+computationally efficient — 计算效率高的
+handles irregular observations — 能处理不规则观测
+guarantees the smoothness — 保证平滑性
+generated functions — 生成函数；生成曲线
+practical and flexible solution — 实用且灵活的解决方案
+synthetic data quality — 合成数据质量
+clinical trajectory data — 临床轨迹数据
+MIMIC-IV patient electronic health records — MIMIC-IV 患者电子健康记录
+EHR longitudinal database — 电子健康记录纵向数据库
+longitudinal database — 纵向数据库
+high-quality surrogate data — 高质量替代数据
+downstream tasks — 下游任务；后续分析任务
+highlighting its potential — 强调其潜力
+boost the utility — 提高可用性；增强使用价值
+clinical applications — 临床应用
+EHR:电子健康记录
+
+
+
+
+
+
+
+
 
 ----survDiff-------------------------------                  |
 | ---------------------------------- | ----------- | --------------------------- |
