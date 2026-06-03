@@ -90,7 +90,7 @@ $$
 
 就是$\epsilon$和$\epsilon_\theta$ 之间的简单平方距离 ，$\epsilon_\theta$ 就成了网络对噪声的估计值，也就是添加到x0中以生成xt的噪声，最小化这个损失函数，就可以让预测尽可能的准确。
 
-还可以简化一次，为每个样本随机选择一个时间步t,而不是对数百个时间步进行求和（对每个样本来说，计算成本很高）。我们知道当样本数量足够大时，这会收敛于原始目标函数 Final simple loss function 
+还可以简化一次，为每个样本随机选择一个时间步t,而不是对数百个时间步进行求和（对每个样本来说，计算成本很高）。我们知道当样本数量足够大时，这会收敛于原始目标函数 Final simple loss function
 
 $$
 \mathbb{E}_{q,t} \left[ \frac{\beta_t^2}{2\sigma_t^2 \alpha_t (1 - \bar{\alpha}_t)} \| \epsilon - \epsilon_{\theta}(x_t, t) \|^2 \right]
@@ -99,7 +99,6 @@ $$
 ## how to operate it?
 
 在预训练的权重基础上继续train
-
 
 # questions
 
