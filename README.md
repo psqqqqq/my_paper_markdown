@@ -257,8 +257,6 @@ Date:   Thu May 28 10:37:51 2026 +0800
 
 git checkout main
 
-<<<<<<< HEAD
-
 #### git checkout -- README.md
 
 第一步：撕掉本地草稿，让文件乖乖退回到本地的旧节点（节点 A），这是相对于本地的最新节点，但是全局的旧节点
@@ -316,7 +314,6 @@ git clone是从本来就有的拉取下来，二者是反过来的
 这里的origin实际上是对应https://github.com/你的GitHub用户名/你的仓库名.git这个远程仓库的一个别名，因为git可以一次连接多个仓库，所以一般是用主要仓库，origin、我们在不同的文件夹所以可以用同一个通用的origin这个名字 main 是我们本地分支的名字也可以自定义
 
 也是就把我们的本地分支main对应的内容 用git push到origin别名对应的远程仓库
-
 
 # 不常用命令
 
@@ -450,3 +447,51 @@ git branch -d test_model
 对比修改
 
 如果这些修改不重要，那就直接git check out先回退到云端之前的某个节点再pull
+
+## 冲突文件保留 GitHub 远端版本
+
+单个文件----------------------------
+
+git checkout --theirs README.md
+git add README.md
+git commit -m "keep remote README"
+git push origin main
+
+为什么 `--theirs README.md` 后还要 push？
+
+因为这时候你的操作逻辑不是“放弃本地，完全同步 GitHub”，而是：
+
+> 我正在完成一次合并，只是在 README.md 这个冲突文件里选择 GitHub 那一版。
+
+也就是说，你本地可能还有其他修改、其他提交、其他文件，比如你截图里的：	
+
+一气呵成全部的---------------------------
+
+```
+git checkout --theirs .
+把所有冲突文件都切换成 GitHub 远端那一版
+
+git add .
+告诉 Git：这些冲突我处理完了
+
+git commit
+完成这次合并提交
+
+git push
+把合并后的结果推送回 GitHub
+```
+
+注意，这个主要针对 **冲突文件** 。它不是彻底把整个本地仓库变成 GitHub 当前版本。
+
+**git** checkout **--theirs** 就是处理冲突文件用的  git checkout是查看历史版本
+
+## 所有文件完全等于 GitHub，本地的修改都完全不要了
+
+git merge --abort
+取消当前这次失败的 pull / merge
+
+git fetch origin
+重新获取 GitHub 最新版本信息
+
+git reset --hard origin/main
+强制让你本地 main 变成 GitHub 的 main

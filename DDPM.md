@@ -64,7 +64,7 @@ $ \bar{\alpha_t}=(1-\beta)^t$   ，这个到底会收敛于正态分布吗？显
 
 如何训练这个神经网络?用贝叶斯统计中一个非常标准的方法，最小化负对数似然函数
 
-$ -logp_\theta(x_0)$ 用模型生成样本的负对数似然函数，就是利用神经网络从我们的已知数据分布中，找到一组参数theta，最大化生成真实样本x0的可能性 
+$ -logp_\theta(x_0)$ 用模型生成样本的负对数似然函数，就是利用神经网络从我们的已知数据分布中，找到一组参数theta，最大化生成真实样本x0的可能性
 
 前向过程是个马尔科夫链
 
@@ -76,7 +76,7 @@ $ q(x_1,···,x_t|x_0)=q(x_1|x_0)q(x_2|x_1)...q(x_t|x_{t-1})$
 
 大大简化了条件概率
 
-简化公式：$ q(x_{1:T}|x_0)=q(x_1|x_0)q(x_2|x_1)...q(x_T|x_{T-1})$= $ \prod_{t=1}^Tq(x_t|x_{t-1})$而对于complete reverse process ,$p_\theta(x_{0:T})=p_\theta(x_T)\prod_{t=1}^Tp_\theta(x_{t-1}|x_t)$逆向过程不以任何东西为条件，从纯高斯噪声开始，不带任何先验知识$-\log p_{\theta}(x_0) = -\log \int p_{\theta}(x_{0:T}) dx_{1:T}$ 处理联合概率，第一步marginalize the distribution with respect to the other varibables. 
+简化公式：$ q(x_{1:T}|x_0)=q(x_1|x_0)q(x_2|x_1)...q(x_T|x_{T-1})$= $ \prod_{t=1}^Tq(x_t|x_{t-1})$而对于complete reverse process ,$p_\theta(x_{0:T})=p_\theta(x_T)\prod_{t=1}^Tp_\theta(x_{t-1}|x_t)$逆向过程不以任何东西为条件，从纯高斯噪声开始，不带任何先验知识$-\log p_{\theta}(x_0) = -\log \int p_{\theta}(x_{0:T}) dx_{1:T}$ 处理联合概率，第一步marginalize the distribution with respect to the other varibables.
 
 后面太复杂了，总之后面就是利用原始数据x0去训练他
 
@@ -96,9 +96,9 @@ $$
 \mathbb{E}_{q,t} \left[ \frac{\beta_t^2}{2\sigma_t^2 \alpha_t (1 - \bar{\alpha}_t)} \| \epsilon - \epsilon_{\theta}(x_t, t) \|^2 \right]
 $$
 
-
 ## how to operate it?
 
+在预训练的权重基础上继续train
 
 
 # questions
