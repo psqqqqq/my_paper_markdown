@@ -463,7 +463,7 @@ git push origin main
 
 > 我正在完成一次合并，只是在 README.md 这个冲突文件里选择 GitHub 那一版。
 
-也就是说，你本地可能还有其他修改、其他提交、其他文件，比如你截图里的：	
+也就是说，你本地可能还有其他修改、其他提交、其他文件，比如你截图里的：
 
 一气呵成全部的---------------------------
 
@@ -495,3 +495,7 @@ git fetch origin
 
 git reset --hard origin/main
 强制让你本地 main 变成 GitHub 的 main
+
+# test
+
+9:16
