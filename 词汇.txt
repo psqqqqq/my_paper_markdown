@@ -95,6 +95,9 @@ clinical applications — 临床应用
 EHR:电子健康记录
 Convergence：收敛
 
+---------DDPM
+differentiable:可微的
+inverse：逆转的
 
 
 ----survDiff-------------------------------                  |

@@ -82,7 +82,7 @@ $ q(x_1,···,x_t|x_0)=q(x_1|x_0)q(x_2|x_1)...q(x_t|x_{t-1})$
 
 ## Final loss function
 
-经过一系列复杂的推导得到
+经过一系列复杂的推导得到		
 
 $$
 \mathcal{L} = \mathbb{E}_q \left[ \sum_{t > 1} \frac{\beta_t^2}{2\sigma_t^2 \alpha_t (1 - \bar{\alpha}_t)} \| \epsilon - \epsilon_{\theta}(x_t, t) \|^2 \right]
@@ -95,6 +95,10 @@ $$
 $$
 \mathbb{E}_{q,t} \left[ \frac{\beta_t^2}{2\sigma_t^2 \alpha_t (1 - \bar{\alpha}_t)} \| \epsilon - \epsilon_{\theta}(x_t, t) \|^2 \right]
 $$
+
+在DDPM论文中 3.4 节   Simplified training objective说明论文前面已经推导出一个严格的变分下界训练目标，但作者最后没有直接用完整的变分下界训练，而是改用了一个更简单的噪声预测损失-- $L_\text{simple}$。这个简化目标更容易实现，而且竟然		实验上生成图像质量更好。
+
+
 
 ## how to operate it?
 
@@ -123,3 +127,15 @@ $q(x_t|x_{t-1})$ 是一个条件分布,严格地写应该是：$q(x_t \mid x_{t-
 #### Variance-Preserving (VP) Diffusion Process
 
 在扩散模型的背景下，整个过程的核心思想是：**随着噪声的不断加入，数据分布的整体方差始终保持恒定（通常归一化为 1）。**为了让图像退化为纯噪声的同时，其数值范围（分布方差）不至于失控，VP 过程在每次引入新噪声时，会 **按比例同时衰减上一时刻的信号** 。
+
+#### what is decoder?
+
+decoder就是$p_\theta(x_0|x_1)$   指的是最后一步反向分布,也就是： 已经从噪声一步步去噪到了x1，现在要从x1生成最终的干净数据 x0。论文在 Eq. (13) 里把这个最后一步单独称为  discrete decoder ，因为图像像素本质上是离散的整数值，例如 0,1,2,... 255 而模型内部的高斯分布是连续的。
+
+decoder 在这里到底做什么?DDPM的整体过程是：
+
+$$
+X_T→X_{T-1}\rightarrow....\rightarrow X_1→X_0
+$$
+
+其中大部分步骤都是：$p_\theta(x_{t-1}|x_t)$ ，也就是给定$x_t$,预测上一步$x_{t-1}$ ,但是最后一步比较特殊：$p_\theta(x_0|x_1)$ ：因为x0是真实图像数据，而像素是离散整数，0-255，而神经网络输出的是连续值，所以论文需要定义一个  **从连续高斯分布生成离散像素值的概率模型** 。这个东西就叫 decoder。所以这里的 decoder 可以理解成：把最后一步连续的去噪结果 x1，转换成最终离散图像 x0 的概率分布。
