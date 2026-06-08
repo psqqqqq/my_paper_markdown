@@ -98,6 +98,7 @@ Convergence：收敛
 ---------DDPM
 differentiable:可微的
 inverse：逆转的
+shuffle:洗牌
 
 
 ----survDiff-------------------------------                  |

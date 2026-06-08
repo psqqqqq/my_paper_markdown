@@ -82,7 +82,7 @@ $ q(x_1,···,x_t|x_0)=q(x_1|x_0)q(x_2|x_1)...q(x_t|x_{t-1})$
 
 ## Final loss function
 
-经过一系列复杂的推导得到		
+经过一系列复杂的推导得到
 
 $$
 \mathcal{L} = \mathbb{E}_q \left[ \sum_{t > 1} \frac{\beta_t^2}{2\sigma_t^2 \alpha_t (1 - \bar{\alpha}_t)} \| \epsilon - \epsilon_{\theta}(x_t, t) \|^2 \right]
@@ -96,13 +96,29 @@ $$
 \mathbb{E}_{q,t} \left[ \frac{\beta_t^2}{2\sigma_t^2 \alpha_t (1 - \bar{\alpha}_t)} \| \epsilon - \epsilon_{\theta}(x_t, t) \|^2 \right]
 $$
 
-在DDPM论文中 3.4 节   Simplified training objective说明论文前面已经推导出一个严格的变分下界训练目标，但作者最后没有直接用完整的变分下界训练，而是改用了一个更简单的噪声预测损失-- $L_\text{simple}$。这个简化目标更容易实现，而且竟然		实验上生成图像质量更好。
+在DDPM论文中 3.4 节   Simplified training objective说明论文前面已经推导出一个严格的变分下界训练目标，但作者最后没有直接用完整的变分下界训练，而是改用了一个更简单的噪声预测损失-- $L_\text{simple}$。这个简化目标更容易实现，而且竟然实验上生成图像质量更好。如下，即为所有的时间步都赋予等于1的权重
+
+
+$$
+\mathbb{E}_{q,t} \left[ \| \epsilon - \epsilon_{\theta}(x_t, t) \|^2\right]
+$$
+
 
 
 
 ## how to operate it?
 
-在预训练的权重基础上继续train
+在预训练的权重基础上继续train，注意code中
+
+```
+model = deepinv.models.DiffUNet(
+    in_channels=1,
+    out_channels=1,
+    pretrained=None, # 这个视频的例子中，是从头开始训练的，所以没有加载任何预训练权重
+).to(device)
+```
+
+这里的参数
 
 # questions
 
