@@ -95,10 +95,14 @@ clinical applications — 临床应用
 EHR:电子健康记录
 Convergence：收敛
 
----------DDPM
+---------DDPM-----------
 differentiable:可微的
 inverse：逆转的
 shuffle:洗牌
+imputation：插值
+multivariate: 多元的
+
+
 
 
 ----survDiff-------------------------------                  |
