@@ -94,6 +94,15 @@ boost the utility — 提高可用性；增强使用价值
 clinical applications — 临床应用
 EHR:电子健康记录
 Convergence：收敛
+Neruo：神经
+Neuroimaging：神经影像
+cognitive：认知的
+impairment：残疾的
+neurodegenerative：神经变性的
+psychological：心理的
+assess：评估
+access:访问，获取
+IDA:image data archive 
 
 ---------DDPM-----------
 differentiable:可微的
